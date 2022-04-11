@@ -1,0 +1,15 @@
+body{
+	counter-reset: parent;
+}
+h1{
+	counter-reset: child;
+}
+h1::before{
+	content: counter(parent) " : ";
+	counter-increment: parent;
+}
+h2::before{
+	content: counter(parent) "." counter(child) " : ";
+	counter-increment: child;
+}
+
